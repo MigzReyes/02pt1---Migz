@@ -21,4 +21,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+    
+    public void sendMessage () {
+        private textField;
+        private textField2;
+
+        String textField = findViewById(R.id.editText);
+        String textField2 = findViewById(R.id.editText2);
+
+        String text = textField.getString().trim();
+        String text2 = textField2.getString().trim();
+    
+        if (text.equals(text2) {
+            String message = "Both textfield are the same";
+            
+        }
+    }
 }
