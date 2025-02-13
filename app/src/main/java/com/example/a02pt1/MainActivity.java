@@ -1,6 +1,9 @@
 package com.example.a02pt1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    public final static String EXTRA_MESSAGE="com.example.a02pt1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +26,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    public void sendMessage () {
-        private textField;
-        private textField2;
+    public void sendMessage (View view) {
 
-        String textField = findViewById(R.id.editText);
-        String textField2 = findViewById(R.id.editText2);
+        EditText textField = findViewById(R.id.textField);
+        EditText textField2 = findViewById(R.id.textField2);
 
-        String text = textField.getString().trim();
-        String text2 = textField2.getString().trim();
-    
-        if (text.equals(text2) {
-            String message = "Both textfield are the same";
-            
+        String text = textField.toString().trim();
+        String text2 = textField2.toString().trim();
+
+        Intent intent = new Intent(this, DisplayMessageActivity01.class);
+        String message;
+        if (text.equals(text2)) {
+            message = "Both text field are the same";
+        } else {
+            message = "Both text field are not the same";
         }
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
