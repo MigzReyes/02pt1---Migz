@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
         EditText textField = findViewById(R.id.textField);
         EditText textField2 = findViewById(R.id.textField2);
 
-        String text = textField.toString().trim();
-        String text2 = textField2.toString().trim();
+        String text = textField.getText().toString().trim();
+        String text2 = textField2.getText().toString().trim();
 
         Intent intent = new Intent(this, DisplayMessageActivity01.class);
         String message;
-        if (text.equals(text2)) {
+        if (text.equalsIgnoreCase(text2)) {
             message = "Both text field are the same";
         } else {
             message = "Both text field are not the same";
